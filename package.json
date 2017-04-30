@@ -1,0 +1,19 @@
+{
+  "name": "zsh-stats",
+  "version": "1.0.0",
+  "description": "Analyze your zsh history",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "zsh",
+    "chart",
+    "stats",
+    "statistics",
+    "history",
+    "shell"
+  ],
+  "author": "Simon Meusel",
+  "license": "GPL-3.0"
+}
