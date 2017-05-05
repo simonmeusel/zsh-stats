@@ -15,10 +15,37 @@
 
         <h1>ZSH Stats</h1>
 
+        <p>With ZSH Stats you can figure out which commands you mostly used! It also tells you how many commands you executed in general...</p>
+
         <br>
 
         <h6>1. Paste contents of <code>.zsh_history</code> here:</h6>
         <textarea class="form-control" id="history"></textarea>
+        <br>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                    <h6 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseable" aria-expanded="true" aria-controls="collapseable">
+                            How to copy contents of <code>.zsh_history</code> ?
+                        </a>
+                    </h5>
+                </div>
+
+                <div id="collapseable" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="card-block">
+                        <h6>Mac</h6>
+                        <code>pbcopy < ~/.zsh_history</code>
+                        <hr>
+                        <h6>Linux</h6>
+                        <code>sudo apt-get install xclip &amp;&amp; xclip -sel clip < ~/.zsh_history</code>
+                        <hr>
+                        <h6>Windows</h6>
+                        <code>clip < ~/.zsh_history</code>
+                    </div>
+                </div>
+            </div>
+        </div>
         <br>
         <button type="button" class="btn btn-primary update">Update</button>
 
@@ -28,10 +55,10 @@
 
         Max items:
         <input type="number" class="form-control" step="1" min="0" id="max-items" value="30">
-        Lenght multiplier:
-        <input type="number" class="form-control" id="lenght-multiplier" value="0">
 
         <br>
+
+        <p>Amount of commands: <span id="command-amount"></span></p>
 
         <ul class="nav nav-tabs update">
             <li class="nav-item">
@@ -42,12 +69,29 @@
             </li>
         </ul>
 
+        <br>
+
         <canvas></canvas>
     </div>
 
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <footer>
+        <div class="container">
+            Copyright Simon Meusel 2017, created using
+            <a href="http://jquery.com/">jQuery</a> ,
+            <a href="http://tether.io/">Tether</a> ,
+            <a href="http://chartjs.org/">Chart.js</a> ,
+            <a href="http://getbootstrap.com/">Bootstrap</a>.
+            <a href="https://simonmeusel.github.io/contact.html">Contact</a>
+            <a href="https://simonmeusel.github.io/impressum.html">Impressum</a>
+        </div>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" integrity="sha256-GcknncGKzlKm69d+sp+k3A2NyQE+jnu43aBl6rrDN2I=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" integrity="sha256-GcknncGKzlKm69d+sp+k3A2NyQE+jnu43aBl6rrDN2I=" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

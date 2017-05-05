@@ -5,6 +5,8 @@ $(function () {
         }
     };
 
+    $('.collapse').collapse()
+
     $('a.nav-link').on('click', function () {
         $(this).parent().parent().find('a.nav-link.active').removeClass('active');
         $(this).addClass('active');
@@ -16,6 +18,7 @@ $(function () {
         var mode = $('a.nav-link.active').data('mode');
         var lines = $('#history').val().split('\n');
         var jsonData = {};
+        $('#command-amount').text(lines.length);
         // Get data
         console.log('Get data');
         for (var line of lines) {
@@ -54,7 +57,6 @@ $(function () {
         }
         // Sort array
         console.log('Sort array');
-        var lenghtMultiplier = $('#lenght-multiplier').val();
         arrayData.sort(function (a, b) {
             return b.value - a.value;
         });
